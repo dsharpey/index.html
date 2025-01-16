@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindset Marketing: The Psychology Behind Business Success</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Discover the psychology secrets behind successful marketing. Free guide to understanding how people think, decide, and buy.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: #1E2761;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 60px 0;
+            background: #FFFFFF;
+        }
+
+        .features-box {
+            background: #F5F7FF;
+            border-radius: 12px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .features-list {
+            list-style: none;
+        }
+
+        .features-list li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .features-list li:before {
+            content: "✓";
+            color: #FFD700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: #FFFFFF;
+            padding: 60px 0;
+        }
+
+        .problem-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .problem-list li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .problem-list li:before {
+            content: "•";
+            color: #FFD700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Target Section */
+        .target {
+            background: #F5F7FF;
+            padding: 60px 0;
+        }
+
+        .target h2 {
+            color: #1E2761;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .target-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .target-list li {
+            margin: 15px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .target-list li:before {
+            content: "→";
+            color: #2E5CFF;
+            position: absolute;
+            left: 0;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .form-group {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            border: 1px solid #E5E5E5;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            background: #2E5CFF;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #2348DB;
+        }
+
+        .urgency {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Form Messages */
+        .form-success, .form-error {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .form-success {
+            color: #28a745;
+            background: #d4edda;
+        }
+
+        .form-error {
+            color: #dc3545;
+            background: #f8d7da;
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .features-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Mindset Marketing: The Psychology Behind Business Success</h1>
+            <p class="fade-in">Tired of watching your competitors win while your marketing falls flat?</p>
+            <div class="hero-text fade-in">
+                <p>It's not your product.</p>
+                <p>It's not your price.</p>
+                <p>It's not even your marketing budget.</p>
+                <p><strong>It's psychology.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-box fade-in">
+                <p>Most businesses are doing everything "right":</p>
+                <ul class="problem-list">
+                    <li>Posting on social media daily</li>
+                    <li>Running expensive ads</li>
+                    <li>Creating endless content</li>
+                    <li>Working harder than ever</li>
+                </ul>
+                <p class="emphasis">Yet somehow... nothing works.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-box fade-in">
+                <h2>In This FREE Guide, You'll Discover:</h2>
+                <ul class="features-list">
+                    <li>Why most businesses fail (and how to avoid it)</li>
+                    <li>The hidden triggers that make people buy</li>
+                    <li>How to build instant trust with any audience</li>
+                    <li>Simple systems you can implement today</li>
+                </ul>
+                <div class="features-subtext">
+                    <p>No complex theories.</p>
+                    <p>No fancy jargon.</p>
+                    <p>Just practical psychology you can use immediately.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience Section -->
+    <section class="target">
+        <div class="container">
+            <h2 class="fade-in">Who Is This Guide For?</h2>
+            <ul class="target-list fade-in">
+                <li>Small business owners wanting more sales</li>
+                <li>Entrepreneurs tired of wasting money on ads</li>
+                <li>Marketing teams looking for better results</li>
+                <li>Anyone ready to understand why people really buy</li>
+            </ul>
+            <div class="target-emphasis fade-in">
+                <p>This isn't another "marketing tips" guide.</p>
+                <p>This is about understanding how people think, decide, and buy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">Get Instant Access</h2>
+            <p class="fade-in">Enter your email below to download your free copy now.</p>
+            <div class="form-group fade-in">
+                <form id="downloadForm">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Download Free Guide</button>
+                </form>
+                <div class="form-success">Thank you! Check your email for your free guide.</div>
+                <div class="form-error">Oops! Something went wrong. Please try again.</div>
+            </div>
+            <p class="urgency fade-in">Don't let another day of ineffective marketing hurt your business.<br>
+            Get the psychology insights you need - 100% free.</p>
+        </div>
+    </section>
+    <!-- JavaScript - Add this just before closing body tag -->
+    <script>
+        // Fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            });
+
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Form handling
+        document.getElementById('downloadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = this.querySelector('input[type="email"]').value;
+            const successMessage = document.querySelector('.form-success');
+            const errorMessage = document.querySelector('.form-error');
+            
+            // Here you would typically send the email to your server
+            // This is a simple example - replace with your actual form handling
+            try {
+                // Simulate API call
+                setTimeout(() => {
+                    successMessage.style.display = 'block';
+                    errorMessage.style.display = 'none';
+                    this.reset();
+                    
+                    // Here you would typically redirect to the download or thank you page
+                    // window.location.href = 'thank-you.html';
+                }, 1000);
+            } catch (error) {
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
