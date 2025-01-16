@@ -309,22 +309,24 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2 class="fade-in">Get Instant Access</h2>
-            <p class="fade-in">Enter your email below to download your free copy now.</p>
-            <div class="form-group fade-in">
-                <form id="downloadForm">
-                    <input type="email" placeholder="Enter your email address" required>
-                    <button type="submit">Download Free Guide</button>
-                </form>
-             <form action="https://formspree.io/f/YOUR_ENDPOINT" method="POST">
-    <div class="form-group">
-        <input type="text" name="name" placeholder="Enter your name" required>
-        <input type="email" name="email" placeholder="Enter your email address" required>
-        <button type="submit">Download Free Guide</button>
+    <!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <h2 class="fade-in">Get Instant Access</h2>
+        <p class="fade-in">Enter your email below to download your free copy now.</p>
+        <div class="form-group fade-in">
+            <form action="https://formspree.io/f/YOUR_ENDPOINT" method="POST">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Download Free Guide</button>
+            </form>
+            <div class="form-success">Thank you! Check your email for your free guide.</div>
+            <div class="form-error">Oops! Something went wrong. Please try again.</div>
+        </div>
+        <p class="urgency fade-in">Don't let another day of ineffective marketing hurt your business.<br>
+        Get the psychology insights you need - 100% free.</p>
     </div>
-</form>
+</section>
     <!-- JavaScript - Add this just before closing body tag -->
     <script>
         // Fade-in animation
