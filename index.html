@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Root Variables */
+        :root {
+            --fluid-typography: clamp(16px, 1.5vw, 18px);
+        }
+
         /* Reset and Base Styles */
         * {
             margin: 0;
@@ -23,6 +28,7 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333333;
+            font-size: var(--fluid-typography);
         }
 
         .container {
@@ -34,19 +40,20 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
-            padding: 40px 0;
+            padding: 80px 0;
             text-align: center;
         }
 
         .hero h1 {
             color: #1E2761;
-            font-size: 38px;
+            font-size: clamp(32px, 5vw, 48px);
             font-weight: 700;
             margin-bottom: 20px;
+            line-height: 1.2;
         }
 
         .hero p {
-            font-size: 24px;
+            font-size: clamp(18px, 2.5vw, 24px);
             max-width: 800px;
             margin: 0 auto 30px;
         }
@@ -60,12 +67,12 @@
 
         .insight h2 {
             color: #1E2761;
-            font-size: 36px;
+            font-size: clamp(28px, 4vw, 36px);
             margin-bottom: 20px;
         }
 
         .insight p {
-            font-size: 20px;
+            font-size: clamp(16px, 2vw, 20px);
             color: #333;
             margin-bottom: 30px;
             max-width: 600px;
@@ -82,7 +89,7 @@
 
         .insight-content li {
             margin: 15px 0;
-            font-size: 18px;
+            font-size: clamp(16px, 1.8vw, 18px);
             color: #333;
         }
 
@@ -95,7 +102,7 @@
         .features-box {
             background: #F5F7FF;
             border-radius: 12px;
-            padding: 40px;
+            padding: clamp(20px, 4vw, 40px);
             margin: 40px 0;
         }
 
@@ -107,6 +114,7 @@
             margin: 15px 0;
             padding-left: 30px;
             position: relative;
+            font-size: clamp(16px, 1.8vw, 18px);
         }
 
         .features-list li:before {
@@ -137,6 +145,7 @@
             margin: 10px 0;
             padding-left: 20px;
             position: relative;
+            font-size: clamp(16px, 1.8vw, 18px);
         }
 
         .problem-list li:before {
@@ -145,8 +154,7 @@
             position: absolute;
             left: 0;
         }
-
-        /* Target Section */
+                /* Target Section */
         .target {
             background: #F5F7FF;
             padding: 60px 0;
@@ -156,6 +164,7 @@
             color: #1E2761;
             text-align: center;
             margin-bottom: 30px;
+            font-size: clamp(28px, 4vw, 36px);
         }
 
         .target-list {
@@ -168,6 +177,7 @@
             margin: 15px 0;
             padding-left: 25px;
             position: relative;
+            font-size: clamp(16px, 1.8vw, 18px);
         }
 
         .target-list li:before {
@@ -187,7 +197,7 @@
             max-width: 500px;
             margin: 0 auto;
             background: white;
-            padding: 20px;
+            padding: clamp(15px, 3vw, 20px);
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
@@ -200,7 +210,7 @@
 
         .urgency {
             margin-top: 20px;
-            font-size: 16px;
+            font-size: clamp(14px, 1.6vw, 16px);
             color: #666;
         }
 
@@ -216,31 +226,47 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
             }
+        }
 
-            .hero p {
-                font-size: 18px;
+        @media (max-width: 768px) {
+            .hero, .problem, .features, .target, .cta {
+                padding: 40px 0;
             }
 
             .features-box {
-                padding: 20px;
+                margin: 20px 0;
             }
-            
+
             .form-container {
-                padding: 10px;
+                padding: 15px;
             }
-            
+
             iframe {
                 min-height: 500px;
             }
         }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
-    <body>
+<body>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -254,7 +280,6 @@
             </div>
         </div>
     </section>
-
     <!-- Psychology Insight Section -->
     <section class="insight">
         <div class="container">
@@ -354,12 +379,31 @@
                         entry.target.classList.add('visible');
                     }
                 });
+            }, {
+                threshold: 0.1, // Triggers when even 10% of the element is visible
+                rootMargin: '0px' // No margin around the viewport
             });
 
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
         });
+
+        // Mobile optimization for iframe
+        function adjustIframeHeight() {
+            const iframe = document.querySelector('iframe');
+            if (window.innerWidth <= 480) {
+                iframe.style.height = '550px';
+            } else if (window.innerWidth <= 768) {
+                iframe.style.height = '500px';
+            } else {
+                iframe.style.height = '450px';
+            }
+        }
+
+        // Run on page load and window resize
+        window.addEventListener('load', adjustIframeHeight);
+        window.addEventListener('resize', adjustIframeHeight);
     </script>
 </body>
 </html>
