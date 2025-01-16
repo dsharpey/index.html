@@ -51,6 +51,41 @@
             margin: 0 auto 30px;
         }
 
+        /* Insight Section */
+        .insight {
+            background: #F5F7FF;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .insight h2 {
+            color: #1E2761;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .insight p {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .insight-content ul {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .insight-content li {
+            margin: 15px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
         /* Features Section */
         .features {
             padding: 60px 0;
@@ -148,67 +183,25 @@
             text-align: center;
         }
 
-        .form-group {
+        .form-container {
             max-width: 500px;
             margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-       .form-group {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-input[type="email"],
-input[type="text"] {
-    width: 100%;
-    height: 50px;
-    padding: 0 15px;
-    border: 1px solid #E5E5E5;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    font-size: 16px;
-}
-
-button {
-    background: #2E5CFF;
-    color: #FFFFFF;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    width: 100%;
-}
-
-button:hover {
-    background: #2348DB;
-}
+        iframe {
+            width: 100%;
+            min-height: 450px;
+            border: none;
         }
 
         .urgency {
             margin-top: 20px;
             font-size: 16px;
             color: #666;
-        }
-
-        /* Form Messages */
-        .form-success, .form-error {
-            display: none;
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        .form-success {
-            color: #28a745;
-            background: #d4edda;
-        }
-
-        .form-error {
-            color: #dc3545;
-            background: #f8d7da;
         }
 
         /* Animation Classes */
@@ -236,10 +229,18 @@ button:hover {
             .features-box {
                 padding: 20px;
             }
+            
+            .form-container {
+                padding: 10px;
+            }
+            
+            iframe {
+                min-height: 500px;
+            }
         }
     </style>
 </head>
-<body>
+    <body>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -250,6 +251,21 @@ button:hover {
                 <p>It's not your price.</p>
                 <p>It's not even your marketing budget.</p>
                 <p><strong>It's psychology.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Psychology Insight Section -->
+    <section class="insight">
+        <div class="container">
+            <h2 class="fade-in">Stop Guessing What Makes People Buy</h2>
+            <p class="fade-in">15 minutes is all it takes to understand the psychology that drives decisions.</p>
+            <div class="insight-content fade-in">
+                <ul>
+                    <li>Understand what really drives decisions</li>
+                    <li>Learn the triggers that make people act</li>
+                    <li>Turn psychology into profit</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -307,25 +323,26 @@ button:hover {
         </div>
     </section>
 
-    
-<!-- CTA Section -->
-
-    <div class="container">
-        <div class="form-container fade-in">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/viewform?embedded=true&usp=pp_url"
-                width="100%"
-                height="450px"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">
-                Loading…
-            </iframe>
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">Get Instant Access</h2>
+            <p class="fade-in">Enter your details below to download your free copy now.</p>
+            <div class="form-container fade-in">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/viewform?embedded=true&usp=pp_url"
+                    width="100%"
+                    height="450px"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0">
+                    Loading…
+                </iframe>
+            </div>
+            <p class="urgency fade-in">Don't let another day of ineffective marketing hurt your business.<br>
+            Get the psychology insights you need - 100% free.</p>
         </div>
-        <p class="urgency fade-in">Don't let another day of ineffective marketing hurt your business.<br>
-        Get the psychology insights you need - 100% free.</p>
-    </div>
-</section>
-    <!-- JavaScript - Add this just before closing body tag -->
+    </section>
+    <!-- JavaScript -->
     <script>
         // Fade-in animation
         document.addEventListener('DOMContentLoaded', function() {
@@ -342,32 +359,6 @@ button:hover {
             fadeElements.forEach(element => {
                 observer.observe(element);
             });
-        });
-
-        // Form handling
-        document.getElementById('downloadForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const email = this.querySelector('input[type="email"]').value;
-            const successMessage = document.querySelector('.form-success');
-            const errorMessage = document.querySelector('.form-error');
-            
-            // Here you would typically send the email to your server
-            // This is a simple example - replace with your actual form handling
-            try {
-                // Simulate API call
-                setTimeout(() => {
-                    successMessage.style.display = 'block';
-                    errorMessage.style.display = 'none';
-                    this.reset();
-                    
-                    // Here you would typically redirect to the download or thank you page
-                    // window.location.href = 'thank-you.html';
-                }, 1000);
-            } catch (error) {
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-            }
         });
     </script>
 </body>
