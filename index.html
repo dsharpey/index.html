@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Mindset Marketing: The Psychology Behind Business Success</title>
+    <title>Transform Your Focus | Matthew's Guide</title>
     
     <!-- Meta Tags -->
-    <meta name="description" content="Discover the psychology secrets behind successful marketing. Free guide to understanding how people think, decide, and buy.">
+    <meta name="description" content="Transform your focus and productivity with Matthew's complete guide to laser focus in a world of endless distractions.">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Root Variables */
         :root {
-            --fluid-typography: clamp(16px, 1.5vw, 18px);
+            --primary: #1E293B;
+            --accent: #3B82F6;
+            --text: #F8FAFC;
+            --bg-dark: #0F172A;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-hover: rgba(255, 255, 255, 0.08);
+            --spacing: clamp(3rem, 8vw, 8rem);
         }
 
         /* Reset and Base Styles */
@@ -25,341 +33,432 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333333;
-            font-size: var(--fluid-typography);
+            background: var(--primary);
+            color: var(--text);
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: var(--spacing) 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Button Styles */
         .cta-button {
-            display: inline-block;
-            background: #2E5CFF;
-            color: #FFFFFF;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
+            background: var(--accent);
+            color: var(--text);
+            padding: 1rem 2rem;
             border: none;
-            font-size: 18px;
-            transition: background 0.3s ease;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s ease;
         }
 
         .cta-button:hover {
-            background: #2348DB;
+            transform: translateY(-2px);
         }
 
-        /* Popup Styles */
-        .popup-overlay {
+        /* Social Proof Section */
+        .social-proof {
+            background: var(--primary);
+            text-align: center;
+        }
+
+        .social-proof h2 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-proof p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        .testimonial-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author .name {
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .testimonial-author .detail {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Qualification Section */
+        .qualification {
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .qualification h2 {
+            margin-bottom: 4rem;
+        }
+
+        .disqualification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .disqualification-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .disqualification-item:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        .x-mark {
+            font-size: 2rem;
+            color: #EF4444;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .solution h2 {
+            margin-bottom: 1rem;
+        }
+
+        .solution h3 {
+            color: var(--accent);
+            margin-bottom: 4rem;
+        }
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .solution-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        .solution-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Modal Styles */
+        .modal {
             display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
             align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
         }
 
-        .popup {
-            background: white;
-            padding: 30px;
+        .modal-content {
+            background: var(--primary);
+            padding: 3rem;
             border-radius: 12px;
             max-width: 500px;
             width: 90%;
             position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
-        .close-popup {
+        .form-input {
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            background: var(--card-bg);
+            color: var(--text);
+            font-size: 1rem;
+            width: 100%;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .close-modal {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
-            color: #666;
-            line-height: 1;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            color: #1E2761;
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: clamp(18px, 2.5vw, 24px);
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        /* Insight Section */
-        .insight {
-            background: #F5F7FF;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .insight h2 {
-            color: #1E2761;
-            font-size: clamp(28px, 4vw, 36px);
-            margin-bottom: 20px;
-        }
-
-        .insight p {
-            font-size: clamp(16px, 2vw, 20px);
-            color: #333;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-             /* Features Section */
-        .features {
-            padding: 60px 0;
-            background: #FFFFFF;
-        }
-
-        .features-box {
-            background: #F5F7FF;
-            border-radius: 12px;
-            padding: clamp(20px, 4vw, 40px);
-            margin: 40px 0;
-        }
-
-        .features-list {
-            list-style: none;
-        }
-
-        .features-list li {
-            margin: 15px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: clamp(16px, 1.8vw, 18px);
-        }
-
-        .features-list li:before {
-            content: "✓";
-            color: #FFD700;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Target Section */
-        .target {
-            background: #F5F7FF;
-            padding: 60px 0;
-        }
-
-        .target h2 {
-            color: #1E2761;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: clamp(28px, 4vw, 36px);
-        }
-
-        .target-list {
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .target-list li {
-            margin: 15px 0;
-            padding-left: 25px;
-            position: relative;
-            font-size: clamp(16px, 1.8vw, 18px);
-        }
-
-        .target-list li:before {
-            content: "→";
-            color: #2E5CFF;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .fade-in.visible {
+        .close-modal:hover {
             opacity: 1;
-            transform: translateY(0);
         }
 
-        /* Responsive Design */
+        /* Responsive Styles */
         @media (max-width: 768px) {
-            .hero, .features, .target {
-                padding: 40px 0;
+            .container {
+                padding: 0 1rem;
             }
 
-            .features-box {
-                margin: 20px 0;
+            section {
+                padding: calc(var(--spacing) * 0.7) 0;
             }
 
-            .popup {
-                width: 95%;
-                padding: 20px;
+            .testimonial-grid,
+            .solution-grid,
+            .disqualification-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1rem;
+            }
 
-                .target-emphasis {
-    text-align: center;
-    margin-bottom: 30px; /* Add space above the button */
-}
-
-/* You might also want to add this to ensure proper button spacing */
-.target .cta-button {
-    margin-top: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 300px; 
+            .modal-content {
+                padding: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Popup -->
-    <div class="popup-overlay">
-        <div class="popup">
-            <span class="close-popup">&times;</span>
-            <h2>Get Instant Access</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/viewform?embedded=true&usp=pp_url"
-                width="100%"
-                height="450px"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">
-                Loading…
-            </iframe>
-        </div>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="fade-in">Mindset Marketing: The Psychology Behind Business Success</h1>
-            <p class="fade-in">Tired of watching your competitors win while your marketing falls flat?</p>
-            <div class="hero-text fade-in">
-                <p>It's not your product.</p>
-                <p>It's not your price.</p>
-                <p>It's not even your marketing budget.</p>
-                <p><strong>It's psychology.</strong></p>
-            </div>
-            <button class="cta-button fade-in" onclick="openPopup()">Get Free Guide</button>
-        </div>
-    </section>
-    <!-- Psychology Insight Section -->
-    <section class="insight">
-        <div class="container">
-            <h2 class="fade-in">Stop Guessing What Makes People Buy</h2>
-            <p class="fade-in">15 minutes is all it takes to understand the psychology that drives decisions.</p>
-            <div class="insight-content fade-in">
-                <ul>
-                    <li>Understand what really drives decisions</li>
-                    <li>Learn the triggers that make people act</li>
-                    <li>Turn psychology into profit</li>
-                </ul>
-            </div>
+            <h1>Transform Your Focus In A World Of Endless Distractions</h1>
+            <p>Discover the exact system to maintain laser focus, even in a world designed to distract you.</p>
+            <button class="cta-button" onclick="openModal()">GET YOUR FREE GUIDE!</button>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Social Proof -->
+    <section class="social-proof">
         <div class="container">
-            <div class="features-box fade-in">
-                <h2>In This FREE Guide, You'll Discover:</h2>
-                <ul class="features-list">
-                    <li>Why most businesses fail (and how to avoid it)</li>
-                    <li>The hidden triggers that make people buy</li>
-                    <li>How to build instant trust with any audience</li>
-                    <li>Simple systems you can implement today</li>
-                </ul>
-                <div class="features-subtext">
-                    <p>No complex theories.</p>
-                    <p>No fancy jargon.</p>
-                    <p>Just practical psychology you can use immediately.</p>
+            <h2>With over 90,000 subscribers on YouTube...</h2>
+            <p>I've helped thousands of students and professionals transform their focus and productivity. But don't just take my word for it...</p>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Just got my report card and I'm so happy! Thank you Matthew for all your advice through your YouTube channel and the support from this community. One of my goals has been fulfilled! May God guide us on the right path 🙏"</p>
+            </div>
+            <div class="testimonial-author">
+                <p class="name">Valerie S.</p>
+                <p class="detail">Posted 28 days ago • Wins/Achievements</p>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="testimonial-content">
+                <p>"Just got the best possible grade in science (which isn't my strongest subject). Thanks to studying and productivity tips from SS. In my country grades go from 1-6, where 1 is wack and 6 is the best!"</p>
+            </div>
+            <div class="testimonial-author">
+                <p class="name">August Gullestad</p>
+                <p class="detail">Posted 1 hour ago • Wins/Achievements</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Qualification Section -->
+    <section class="qualification">
+        <div class="container">
+            <h2>This Guide Isn't For:</h2>
+            <div class="disqualification-grid">
+                <div class="disqualification-item">
+                    <span class="x-mark">×</span>
+                    <p>People looking for a magic bullet</p>
+                </div>
+                <div class="disqualification-item">
+                    <span class="x-mark">×</span>
+                    <p>Those unwilling to make real changes</p>
+                </div>
+                <div class="disqualification-item">
+                    <span class="x-mark">×</span>
+                    <p>Anyone expecting overnight results</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Target Audience Section -->
-    <section class="target">
+    <!-- Not Your Fault CTA -->
+    <section class="cta-section">
         <div class="container">
-            <h2 class="fade-in">Who Is This Guide For?</h2>
-            <ul class="target-list fade-in">
-                <li>Small business owners wanting more sales</li>
-                <li>Entrepreneurs tired of wasting money on ads</li>
-                <li>Marketing teams looking for better results</li>
-                <li>Anyone ready to understand why people really buy</li>
-            </ul>
-            <div class="target-emphasis fade-in">
-                
-            </div>
-            <button class="cta-button fade-in" onclick="openPopup()">Get Your Free Guide Now</button>
+            <h2>Look, it's not your fault...</h2>
+            <p>Your brain has been rewired by TikTok, Instagram reels, and endless notifications. But here's the thing - you can take back control. All it takes is 15 minutes to understand how you can rewire your brain for laser focus.</p>
+            <button class="cta-button" onclick="openModal()">GET YOUR FREE GUIDE!</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
-    <script>
-        // Fade-in animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="container">
+            <h2>Introducing: The Rewire</h2>
+            <h3>The Complete Guide to Laser Focus</h3>
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h4>Simple Environment Changes</h4>
+                    <p>That make focus inevitable</p>
+                </div>
+                <div class="solution-card">
+                    <h4>The Psychology Behind Focus</h4>
+                    <p>Why traditional productivity advice might be hurting you</p>
+                </div>
+                <div class="solution-card">
+                    <h4>Practical Implementation</h4>
+                    <p>Step-by-step system you can implement today</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h3>Get Your Free Focus Guide</h3>
+            <p>Enter your details to receive instant access</p>
             
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            });
+            <form id="modal-form" class="modal-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeAieVKaw4vlZ6KV59GFR0w0TVqQonb2BT34MT8GGPlIQqhIw/formResponse" method="post" target="_blank">
+                <input 
+                    type="text" 
+                    name="entry.488094636" 
+                    placeholder="Your name" 
+                    required 
+                    class="form-input"
+                >
+                <input 
+                    type="email" 
+                    name="entry.1494124555" 
+                    placeholder="Your email address" 
+                    required 
+                    class="form-input"
+                >
+                <button type="submit" class="cta-button">
+                    GET INSTANT ACCESS
+                </button>
+                <p class="privacy-notice">We respect your privacy. Unsub
+    </section>
 
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
+    <!-- Modal -->
+    [Previous modal code]
 
-        // Popup functionality
-        function openPopup() {
-            document.querySelector('.popup-overlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
-        }
+    <!-- JavaScript -->
+    [Previous JavaScript code]
 
-        // Close popup when clicking the X or outside the popup
-        document.querySelector('.close-popup').addEventListener('click', function() {
-            document.querySelector('.popup-overlay').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        });
-
-        document.querySelector('.popup-overlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
 </body>
 </html>
