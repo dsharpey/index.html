@@ -454,11 +454,48 @@
                 <p class="privacy-notice">We respect your privacy. Unsub
     </section>
 
-    <!-- Modal -->
-    [Previous modal code]
+ <script>
+    // Modal Functions
+    function openModal() {
+        document.getElementById('signup-modal').style.display = 'flex';
+    }
 
-    <!-- JavaScript -->
-    [Previous JavaScript code]
+    function closeModal() {
+        document.getElementById('signup-modal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('signup-modal')) {
+            closeModal();
+        }
+    }
+
+    // Form Handling
+    document.getElementById('modal-form').addEventListener('submit', function(e) {
+        const button = this.querySelector('button');
+        
+        // Add loading state
+        button.disabled = true;
+        button.innerHTML = 'Sending...';
+
+        // Show success message after form submission
+        setTimeout(() => {
+            const modal = document.getElementById('signup-modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h3>Thank You!</h3>
+                    <p>Check your email for your free guide.</p>
+                </div>
+            `;
+            
+            // Close modal after 3 seconds
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        }, 1500);
+    });
+</script>
 
 </body>
 </html>
