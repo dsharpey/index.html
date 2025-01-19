@@ -198,6 +198,53 @@
             text-align: center;
         }
 
+        
+        /* Pain Points Section */
+        .pain-points {
+            padding: var(--spacing) 0;
+            background: var(--primary);
+        }
+
+        .pain-points h2 {
+            text-align: center;
+            margin-bottom: 4rem;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+        }
+
+        .pain-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pain-point-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pain-point-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .pain-point-card .icon {
+            width: 64px;
+            height: 64px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+
         .cta-section h2 {
             margin-bottom: 1.5rem;
             max-width: 800px;
@@ -394,6 +441,29 @@
             </div>
         </div>
     </section>
+
+    
+    <!-- Pain Points Section -->
+    <section class="pain-points">
+        <div class="container">
+            <h2>IF YOU'RE TIRED OF:</h2>
+            <div class="pain-points-grid">
+                <div class="pain-point-card">
+                    <div class="icon">📱</div>
+                    <h3>Starting projects but never finishing them</h3>
+                    <p>Breaking the cycle of incomplete work and missed deadlines</p>
+                </div>
+                <div class="pain-point-card">
+                    <div class="icon">🎯</div>
+                    <h3>Constantly fighting distractions</h3>
+                    <p>Finally overcome the endless pull of notifications and interruptions</p>
+                </div>
+                <div class="pain-point-card">
+                    <div class="icon">💪</div>
+                    <h3>Knowing you're capable of more</h3>
+                    <p>Bridge the gap between your potential and your current performance</p>
+                </div>
+            </div>
 
     <!-- Not Your Fault CTA -->
     <section class="cta-section">
