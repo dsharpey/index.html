@@ -6,7 +6,7 @@
     <title>7 Day Challenge: Fitness Trainer Revenue Booster</title>
     
     <!-- Meta Tags -->
-    <meta name="description" content="Discover the psychology secrets behind successful marketing. Free guide to understanding how people think, decide, and buy.">
+    <meta name="description" content="Transform your fitness business in just 7 days with our proven revenue boost challenge. Perfect for personal trainers ready to scale.">
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,6 +37,23 @@
             padding: 0 20px;
         }
 
+        /* Button Styles */
+        .cta-button {
+            background: #2E5CFF;
+            color: #FFFFFF;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #2348DB;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
@@ -58,28 +75,6 @@
             margin: 0 auto 30px;
         }
 
-        /* Insight Section */
-        .insight {
-            background: #F5F7FF;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .insight h2 {
-            color: #1E2761;
-            font-size: clamp(28px, 4vw, 36px);
-            margin-bottom: 20px;
-        }
-
-        .insight p {
-            font-size: clamp(16px, 2vw, 20px);
-            color: #333;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
         /* Features Section */
         .features {
             padding: 60px 0;
@@ -93,8 +88,24 @@
             margin: 40px 0;
         }
 
+        .features h2 {
+            color: #1E2761;
+            font-size: clamp(28px, 4vw, 36px);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .features h3 {
+            color: #1E2761;
+            font-size: clamp(22px, 3vw, 28px);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
         .features-list {
             list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .features-list li {
@@ -106,53 +117,27 @@
 
         .features-list li:before {
             content: "✓";
-            color: #FFD700;
+            color: #2E5CFF;
             position: absolute;
             left: 0;
         }
 
-        /* Problem Section */
-        .problem {
-            background: #FFFFFF;
-            padding: 60px 0;
-        }
-
-        .problem-box {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .problem-list {
-            list-style: none;
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        .problem-list li {
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-            font-size: clamp(16px, 1.8vw, 18px);
-        }
-
-        .problem-list li:before {
-            content: "•";
-            color: #FFD700;
-            position: absolute;
-            left: 0;
+        .features-subtext {
+            text-align: center;
+            margin-top: 30px;
         }
 
         /* Target Section */
         .target {
             background: #F5F7FF;
             padding: 60px 0;
+            text-align: center;
         }
 
         .target h2 {
             color: #1E2761;
-            text-align: center;
-            margin-bottom: 30px;
             font-size: clamp(28px, 4vw, 36px);
+            margin-bottom: 30px;
         }
 
         .target-list {
@@ -166,16 +151,27 @@
             padding-left: 25px;
             position: relative;
             font-size: clamp(16px, 1.8vw, 18px);
+            text-align: left;
         }
 
         .target-list li:before {
-            content: "→";
+            content: "•";
             color: #2E5CFF;
             position: absolute;
             left: 0;
         }
 
-        /* Popup Styles */
+        .target-emphasis {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .target-emphasis p {
+            font-size: clamp(16px, 1.8vw, 18px);
+            margin-bottom: 30px;
+        }
+
+                /* Popup Styles */
         .popup-overlay {
             display: none;
             position: fixed;
@@ -197,6 +193,7 @@
             width: 90%;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
+            position: relative;
         }
 
         .close-popup {
@@ -237,6 +234,7 @@
             font-size: 16px;
             cursor: pointer;
             transition: background 0.3s ease;
+            width: 100%;
         }
 
         .popup button:hover {
@@ -257,20 +255,13 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .hero, .problem, .features, .target, .cta {
+            .hero, .features, .target {
                 padding: 40px 0;
             }
 
             .features-box {
                 margin: 20px 0;
-            }
-            
-            .form-container {
-                padding: 15px;
-            }
-            
-            iframe {
-                min-height: 500px;
+                padding: 20px;
             }
         }
 
@@ -293,109 +284,88 @@
         }
     </style>
 </head>
-
-    <body>
+<body>
     <!-- Popup -->
     <div class="popup-overlay">
         <div class="popup">
             <span class="close-popup">&times;</span>
-            <h2>Get Your Free Guide</h2>
-            <p>Enter your details below to download the 7-Day Fitness Trainer Revenue Booster Challenge.</p>
+            <h2>Get Your 7-Day Challenge</h2>
+            <p>Enter your details to access the Fitness Trainer Revenue Boost Challenge</p>
             <form action="https://formspree.io/f/xpwwneoj" method="POST">
                 <input type="text" name="name" placeholder="Enter your name" required>
                 <input type="email" name="email" placeholder="Enter your email address" required>
-                <button type="submit">Download Free Guide</button>
+                <button type="submit">GET YOUR 7 DAY CHALLENGE</button>
             </form>
         </div>
     </div>
 
-    <!-- Hero Section -->
+        <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="fade-in">Mindset Marketing: The Psychology Behind Business Success</h1>
-            <p class="fade-in">Tired of watching your competitors win while your marketing falls flat?</p>
+            <h1 class="fade-in">Transform Your Fitness Business in Just 7 Days</h1>
+            <p class="fade-in">Struggling to attract more clients while other trainers seem to effortlessly grow their business?</p>
             <div class="hero-text fade-in">
-                <p>It's not your product.</p>
-                <p>It's not your price.</p>
-                <p>It's not even your marketing budget.</p>
-                <p><strong>It's psychology.</strong></p>
+                <p>The solution isn't working harder – it's working smarter.</p>
             </div>
-            <button class="cta-button fade-in" onclick="openPopup()">Get Free Guide</button>
+            <button class="cta-button fade-in" onclick="openPopup()">GET YOUR 7 DAY CHALLENGE</button>
         </div>
     </section>
 
-    <!-- Psychology Insight Section -->
-    <section class="insight">
-        <div class="container">
-            <h2 class="fade-in">Stop Guessing What Makes People Buy</h2>
-            <p class="fade-in">15 minutes is all it takes to understand the psychology that drives decisions.</p>
-            <div class="insight-content fade-in">
-                <ul>
-                    <li>Understand what really drives decisions</li>
-                    <li>Learn the triggers that make people act</li>
-                    <li>Turn psychology into profit</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem">
-        <div class="container">
-            <div class="problem-box fade-in">
-                <p>Most businesses are doing everything "right":</p>
-                <ul class="problem-list">
-                    <li>Posting on social media daily</li>
-                    <li>Running expensive ads</li>
-                    <li>Creating endless content</li>
-                    <li>Working harder than ever</li>
-                </ul>
-                <p class="emphasis">Yet somehow... nothing works.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
+    <!-- Main Content Section -->
     <section class="features">
         <div class="container">
             <div class="features-box fade-in">
-                <h2>In This FREE Guide, You'll Discover:</h2>
+                <h2>Introducing the 7-Day Fitness Trainer Revenue Boost Challenge</h2>
+                <h3>In Just One Week, You'll:</h3>
                 <ul class="features-list">
-                    <li>Why most businesses fail (and how to avoid it)</li>
-                    <li>The hidden triggers that make people buy</li>
-                    <li>How to build instant trust with any audience</li>
-                    <li>Simple systems you can implement today</li>
+                    <li>Double your consultation bookings</li>
+                    <li>Create magnetic content that attracts ideal clients</li>
+                    <li>Build a predictable system for consistent growth</li>
+                    <li>Turn your Instagram into a client-generating machine</li>
                 </ul>
                 <div class="features-subtext">
-                    <p>No complex theories.</p>
-                    <p>No fancy jargon.</p>
-                    <p>Just practical psychology you can use immediately.</p>
+                    <p>This isn't just another "get rich quick" scheme.</p>
+                    <p>This is a proven, step-by-step system specifically designed for fitness trainers who are ready to scale.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Target Audience Section -->
-    <section class="target">
+    <!-- What You'll Get Section -->
+    <section class="features">
         <div class="container">
-            <h2 class="fade-in">Who Is This Guide For?</h2>
-            <ul class="target-list fade-in">
-                <li>Small business owners wanting more sales</li>
-                <li>Entrepreneurs tired of wasting money on ads</li>
-                <li>Marketing teams looking for better results</li>
-                <li>Anyone ready to understand why people really buy</li>
-            </ul>
-            <div class="target-emphasis fade-in">
-                <p>This isn't another "marketing tips" guide.</p>
-                <p>This is about understanding how people think, decide, and buy.</p>
+            <div class="features-box fade-in">
+                <h2>What You'll Get:</h2>
+                <ul class="features-list">
+                    <li>Daily actionable tasks that deliver immediate results</li>
+                    <li>Ready-to-use templates for content and client outreach</li>
+                    <li>Proven scripts that convert followers into clients</li>
+                    <li>Expert strategies used by 6-figure fitness trainers</li>
+                </ul>
             </div>
-            <button class="cta-button fade-in" onclick="openPopup()">Get Your Free Guide Now</button>
         </div>
     </section>
 
-            <!-- JavaScript -->
+    <!-- Perfect For Section -->
+    <section class="target">
+        <div class="container">
+            <h2 class="fade-in">Perfect For:</h2>
+            <ul class="target-list fade-in">
+                <li>Personal trainers struggling to fill their calendar</li>
+                <li>Fitness coaches tired of the feast-or-famine cycle</li>
+                <li>Trainers ready to scale beyond 1-on-1 sessions</li>
+                <li>Anyone wanting to build a thriving fitness business</li>
+            </ul>
+            <div class="target-emphasis fade-in">
+                <h2>Why This Challenge Works:</h2>
+                <p>Unlike generic business advice, this challenge is specifically crafted for fitness trainers. Each day builds on the previous one, creating a complete system for sustainable growth.</p>
+            </div>
+            <button class="cta-button fade-in" onclick="openPopup()">GET YOUR 7 DAY CHALLENGE</button>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
     <script>
-        // Fade-in animation
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
             
@@ -412,16 +382,14 @@
             });
         });
 
-        // Popup functionality
         function openPopup() {
             document.querySelector('.popup-overlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+            document.body.style.overflow = 'hidden';
         }
 
-        // Close popup when clicking the X or outside the popup
         document.querySelector('.close-popup').addEventListener('click', function() {
             document.querySelector('.popup-overlay').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            document.body.style.overflow = 'auto';
         });
 
         document.querySelector('.popup-overlay').addEventListener('click', function(e) {
