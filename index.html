@@ -185,15 +185,22 @@
             align-items: center;
         }
 
-        .popup {
-            background: #FFFFFF;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            text-align: center;
-            position: relative;
+       .popup {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px; /* Made wider for Google Form */
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.popup iframe {
+    width: 100%;
+    min-height: 450px;
+    border: none;
+
         }
 
         .close-popup {
@@ -286,18 +293,18 @@
 </head>
 <body>
     <!-- Popup -->
-    <div class="popup-overlay">
-        <div class="popup">
-            <span class="close-popup">&times;</span>
-            <h2>Get Your 7-Day Challenge</h2>
-            <p>Enter your details to access the Fitness Trainer Revenue Boost Challenge</p>
-            <form action="https://formspree.io/f/xpwwneoj" method="POST">
-                <input type="text" name="name" placeholder="Enter your name" required>
-                <input type="email" name="email" placeholder="Enter your email address" required>
-                <button type="submit">GET YOUR 7 DAY CHALLENGE</button>
-            </form>
-        </div>
+<div class="popup-overlay">
+    <div class="popup">
+        <span class="close-popup">&times;</span>
+        <h2>Get Your 7-Day Challenge</h2>
+        <p>Enter your details to access the Fitness Trainer Revenue Boost Challenge</p>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/formResponse" method="POST">
+            <input type="text" name="entry.1589192524" placeholder="Enter your name" required>
+            <input type="email" name="entry.404299625" placeholder="Enter your email address" required>
+            <button type="submit">GET YOUR 7 DAY CHALLENGE</button>
+        </form>
     </div>
+</div>
 
         <!-- Hero Section -->
     <section class="hero">
