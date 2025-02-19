@@ -294,30 +294,35 @@
 <!-- Popup -->
 
 </div>
-        <div class="popup-overlay">
+         <!-- Popup -->
+
+  <div class="popup-overlay">
+
     <div class="popup">
-        <span class="close-popup">&times;</span>
-        <h2>Get Your 7-Day Challenge</h2>
-        <p>Enter your details to access the Fitness Trainer Revenue Boost Challenge</p>
-        <form id="challengeForm" onsubmit="submitForm(event)">
-            <input type="text" name="entry.1589192524" placeholder="Enter your name" required>
-            <input type="email" name="entry.404299625" placeholder="Enter your email address" required>
-            <button type="submit">GET YOUR 7 DAY CHALLENGE</button>
-        </form>
-        <iframe id="googleForm" 
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/viewform?embedded=true&usp=pp_url"
-            style="display: none"
-            width="100%"
-            height="0"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-        </iframe>
-        <div id="successMessage" style="display: none;">
-            <p>Thanks! Check your email for your challenge.</p>
-        </div>
+
+      <span class="close-popup">&times;</span>
+
+      <h2>Get Instant Access</h2>
+
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/viewform?embedded=true&usp=pp_url"
+
+        width="100%"
+
+        height="450px"
+
+        frameborder="0"
+
+        marginheight="0"
+
+        marginwidth="0">
+
+        Loading…
+
+      </iframe>
+
     </div>
-</div>
+
+  </div>
 
         <!-- Hero Section -->
     <section class="hero">
@@ -383,45 +388,83 @@
             <button class="cta-button fade-in" onclick="openPopup()">GET YOUR 7 DAY CHALLENGE</button>
         </div>
     </section>
+    
+
+  <script>
+
+    // Fade-in animation
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+       
+
+      const observer = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add('visible');
+
+          }
+
+        });
+
+      });
+
+
+
+      fadeElements.forEach(element => {
+
+        observer.observe(element);
+
+      });
+
+    });
+
+
+
+    // Popup functionality
+
+    function openPopup() {
+
+      document.querySelector('.popup-overlay').style.display = 'flex';
+
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
+
+    }
+
+
+
+    // Close popup when clicking the X or outside the popup
+
+    document.querySelector('.close-popup').addEventListener('click', function() {
+
+      document.querySelector('.popup-overlay').style.display = 'none';
+
+      document.body.style.overflow = 'auto'; // Re-enable scrolling
+
+    });
+
+
+
+    document.querySelector('.popup-overlay').addEventListener('click', function(e) {
+
+      if (e.target === this) {
+
+        this.style.display = 'none';
+
+        document.body.style.overflow = 'auto';
+
+      }
+
+    });
+
+  </script>
+
+</body>
 
    <script>
-      <!-- JavaScript -->
-    <script>
-        // Fade-in animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const fadeElements = document.querySelectorAll('.fade-in');
-            
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            });
-
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-
-        // Popup functionality
-        function openPopup() {
-            document.querySelector('.popup-overlay').style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
-        }
-
-        // Close popup when clicking the X or outside the popup
-        document.querySelector('.close-popup').addEventListener('click', function() {
-            document.querySelector('.popup-overlay').style.display = 'none';
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
-        });
-
-        document.querySelector('.popup-overlay').addEventListener('click', function(e) {
-            if (e.target === this) {
-                this.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-    </script>
-</body>
-</html>
+     
