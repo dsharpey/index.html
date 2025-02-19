@@ -385,69 +385,52 @@
     </section>
 
    <script>
-    // Fade-in animation
-    document.addEventListener('DOMContentLoaded', function() {
-        const fadeElements = document.querySelectorAll('.fade-in');
+
+       
+  function submitForm(e) {
+    e.preventDefault();
+    
+    const form = document.getElementById('challengeForm');
+    const formData = new FormData(form);
+    
+    const url = 'https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/formResponse';
+    
+    fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    }).then(() => {
+        // Show success message
+        form.style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
         
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-
-        fadeElements.forEach(element => {
-            observer.observe(element);
-        });
-    });
-
-    // Popup functionality
-    function openPopup() {
-        document.querySelector('.popup-overlay').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-
-    // Form submission
-    function submitForm(e) {
-        e.preventDefault();
-        
-        const form = document.getElementById('challengeForm');
-        const formData = new FormData(form);
-        
-        fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/formResponse', {
-            method: 'POST',
-            mode: 'no-cors',
-            body: formData
-        })
-        .then(() => {
-            // Show success message
-            form.style.display = 'none';
-            document.getElementById('successMessage').style.display = 'block';
-            
-            // Close popup after 2 seconds
-            setTimeout(() => {
-                document.querySelector('.popup-overlay').style.display = 'none';
-                document.body.style.overflow = 'auto';
-                
-                // Reset form for next time
-                form.reset();
-                form.style.display = 'block';
-                document.getElementById('successMessage').style.display = 'none';
-            }, 2000);
-        });
-    }
-
-    // Close popup when clicking the X or outside
-    document.querySelector('.close-popup').addEventListener('click', function() {
-        document.querySelector('.popup-overlay').style.display = 'none';
-        document.body.style.overflow = 'auto';
-    });
-
-    document.querySelector('.popup-overlay').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.style.display = 'none';
+        // Close popup after 2 seconds
+        setTimeout(() => {
+            document.querySelector('.popup-overlay').style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
+            
+            // Reset for next time
+            form.reset();
+            form.style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }, 2000);
     });
-</script>
+}
+
+// Add this to your existing JavaScript
+function openPopup() {
+    document.querySelector('.popup-overlay').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+document.querySelector('.close-popup').addEventListener('click', function() {
+    document.querySelector('.popup-overlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+document.querySelector('.popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        this.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
