@@ -293,16 +293,20 @@
 </head>
 <body>
     <!-- Popup -->
+<!-- Popup -->
 <div class="popup-overlay">
     <div class="popup">
         <span class="close-popup">&times;</span>
         <h2>Get Your 7-Day Challenge</h2>
         <p>Enter your details to access the Fitness Trainer Revenue Boost Challenge</p>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/formResponse" method="POST">
+        <form id="challengeForm" onsubmit="submitForm(event)">
             <input type="text" name="entry.1589192524" placeholder="Enter your name" required>
             <input type="email" name="entry.404299625" placeholder="Enter your email address" required>
             <button type="submit">GET YOUR 7 DAY CHALLENGE</button>
         </form>
+        <div id="successMessage" style="display: none;">
+            <p>Thanks! Check your email for your challenge.</p>
+        </div>
     </div>
 </div>
 
@@ -404,6 +408,34 @@
                 this.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
+
+            function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('challengeForm');
+    const formData = new FormData(form);
+    
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/formResponse', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    })
+    .then(() => {
+        // Hide form, show success message
+        form.style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        
+        // Close popup after 2 seconds
+        setTimeout(() => {
+            document.querySelector('.popup-overlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            
+            // Reset form for next time
+            form.reset();
+            form.style.display = 'block';
+            document.getElementById('successMessage').style.display = 'none';
+        }, 2000);
+    });
+}
         });
     </script>
 </body>
