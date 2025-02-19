@@ -1,261 +1,306 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Mindset Marketing: The Psychology Behind Business Success</title>
-    
-    <!-- Meta Tags -->
-    <meta name="description" content="Discover the psychology secrets behind successful marketing. Free guide to understanding how people think, decide, and buy.">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* Root Variables */
-        :root {
-            --fluid-typography: clamp(16px, 1.5vw, 18px);
-        }
 
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333333;
-            font-size: var(--fluid-typography);
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+  <title>7 Day Challenge: Fitness Trainer Revenue Booster </title>
 
-        /* Button Styles */
-        .cta-button {
-            display: inline-block;
-            background: #2E5CFF;
-            color: #FFFFFF;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            font-size: 18px;
-            transition: background 0.3s ease;
-        }
+      <!-- Meta Tags -->
 
-        .cta-button:hover {
-            background: #2348DB;
-        }
+  <meta name="description" content="Discover the psychology secrets behind successful marketing. Free guide to understanding how people think, decide, and buy.">
 
-        /* Popup Styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
+   
 
-        .popup {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
+  <!-- Fonts -->
 
-        .close-popup {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #666;
-            line-height: 1;
-        }
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
+   
 
-        .hero h1 {
-            color: #1E2761;
-            font-size: clamp(32px, 5vw, 48px);
-            font-weight: 700;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
+  <style>
 
-        .hero p {
-            font-size: clamp(18px, 2.5vw, 24px);
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        /* Insight Section */
-        .insight {
-            background: #F5F7FF;
-            padding: 60px 0;
-            text-align: center;
-        }
-
-        .insight h2 {
-            color: #1E2761;
-            font-size: clamp(28px, 4vw, 36px);
-            margin-bottom: 20px;
-        }
-
-        .insight p {
-            font-size: clamp(16px, 2vw, 20px);
-            color: #333;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-             /* Features Section */
-        .features {
-            padding: 60px 0;
-            background: #FFFFFF;
-        }
-
-        .features-box {
-            background: #F5F7FF;
-            border-radius: 12px;
-            padding: clamp(20px, 4vw, 40px);
-            margin: 40px 0;
-        }
-
-        .features-list {
-            list-style: none;
-        }
-
-        .features-list li {
-            margin: 15px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: clamp(16px, 1.8vw, 18px);
-        }
-
-        .features-list li:before {
-            content: "✓";
-            color: #FFD700;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Target Section */
-        .target {
-            background: #F5F7FF;
-            padding: 60px 0;
-        }
-
-        .target h2 {
-            color: #1E2761;
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: clamp(28px, 4vw, 36px);
-        }
-
-        .target-list {
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-
-        .target-list li {
-            margin: 15px 0;
-            padding-left: 25px;
-            position: relative;
-            font-size: clamp(16px, 1.8vw, 18px);
-        }
-
-        .target-list li:before {
-            content: "→";
-            color: #2E5CFF;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero, .features, .target {
-                padding: 40px 0;
-            }
-
-            .features-box {
-                margin: 20px 0;
-            }
-
-            .popup {
-                width: 95%;
-                padding: 20px;
-
-                .target-emphasis {
-    text-align: center;
-    margin-bottom: 30px; /* Add space above the button */
+/* Root Variables */
+:root {
+    --fluid-typography: clamp(16px, 1.5vw, 18px);
 }
 
-/* You might also want to add this to ensure proper button spacing */
-.target .cta-button {
-    margin-top: 20px;
-    display: block;
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    font-size: var(--fluid-typography);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FF 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #1E2761;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: clamp(18px, 2.5vw, 24px);
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Insight Section */
+.insight {
+    background: #F5F7FF;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.insight h2 {
+    color: #1E2761;
+    font-size: clamp(28px, 4vw, 36px);
+    margin-bottom: 20px;
+}
+
+.insight p {
+    font-size: clamp(16px, 2vw, 20px);
+    color: #333;
+    margin-bottom: 30px;
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    max-width: 300px; 
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Popup -->
-    <div class="popup-overlay">
-        <div class="popup">
-            <span class="close-popup">&times;</span>
-            <h2>Get Instant Access</h2>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsflL4jiEmBOy6FCkuVWJdRRIgsgVXwtFc0xvBqBsYe7pHiw/viewform?embedded=true&usp=pp_url"
-                width="100%"
-                height="450px"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0">
-                Loading…
-            </iframe>
-        </div>
-    </div>
+}
+
+/* Features Section */
+.features {
+    padding: 60px 0;
+    background: #FFFFFF;
+}
+
+.features-box {
+    background: #F5F7FF;
+    border-radius: 12px;
+    padding: clamp(20px, 4vw, 40px);
+    margin: 40px 0;
+}
+
+.features-list {
+    list-style: none;
+}
+
+.features-list li {
+    margin: 15px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: clamp(16px, 1.8vw, 18px);
+}
+
+.features-list li:before {
+    content: "✓";
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+}
+
+/* Problem Section */
+.problem {
+    background: #FFFFFF;
+    padding: 60px 0;
+}
+
+.problem-box {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.problem-list {
+    list-style: none;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.problem-list li {
+    margin: 10px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: clamp(16px, 1.8vw, 18px);
+}
+
+.problem-list li:before {
+    content: "•";
+    color: #FFD700;
+    position: absolute;
+    left: 0;
+}
+
+/* Target Section */
+.target {
+    background: #F5F7FF;
+    padding: 60px 0;
+}
+
+.target h2 {
+    color: #1E2761;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: clamp(28px, 4vw, 36px);
+}
+
+.target-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.target-list li {
+    margin: 15px 0;
+    padding-left: 25px;
+    position: relative;
+    font-size: clamp(16px, 1.8vw, 18px);
+}
+
+.target-list li:before {
+    content: "→";
+    color: #2E5CFF;
+    position: absolute;
+    left: 0;
+}
+
+/* Popup Styles */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.popup h2 {
+    color: #1E2761;
+    margin-bottom: 15px;
+}
+
+.popup p {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.popup input[type="text"],
+.popup input[type="email"] {
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #E5E5E5;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.popup button {
+    background: #2E5CFF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.popup button:hover {
+    background: #2348DB;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero, .problem, .features, .target, .cta {
+        padding: 40px 0;
+    }
+
+    .features-box {
+        margin: 20px 0;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+    
+    iframe {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    <body>
+   
 
     <!-- Hero Section -->
     <section class="hero">
@@ -271,6 +316,21 @@
             <button class="cta-button fade-in" onclick="openPopup()">Get Free Guide</button>
         </div>
     </section>
+    
+ <!-- Popup -->
+    <div class="popup-overlay">
+        <div class="popup">
+            <span class="close-popup">&times;</span>
+            <h2>Get Your Free Guide</h2>
+            <p>Enter your email below to download the 7-Day Fitness Trainer Revenue Booster Challenge.</p>
+            <form action="https://formspree.io/f/xpwwneoj" method="POST">
+                <input type="text" name="name" placeholder="Enter your name" required>
+                <input type="email" name="email" placeholder="Enter your email address" required>
+                <button type="submit">Download Free Guide</button>
+            </form>
+        </div>
+    </div>
+    
     <!-- Psychology Insight Section -->
     <section class="insight">
         <div class="container">
@@ -282,6 +342,22 @@
                     <li>Learn the triggers that make people act</li>
                     <li>Turn psychology into profit</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-box fade-in">
+                <p>Most businesses are doing everything "right":</p>
+                <ul class="problem-list">
+                    <li>Posting on social media daily</li>
+                    <li>Running expensive ads</li>
+                    <li>Creating endless content</li>
+                    <li>Working harder than ever</li>
+                </ul>
+                <p class="emphasis">Yet somehow... nothing works.</p>
             </div>
         </div>
     </section>
@@ -317,13 +393,19 @@
                 <li>Anyone ready to understand why people really buy</li>
             </ul>
             <div class="target-emphasis fade-in">
-                
+                <p>This isn't another "marketing tips" guide.</p>
+                <p>This is about understanding how people think, decide, and buy.</p>
             </div>
             <button class="cta-button fade-in" onclick="openPopup()">Get Your Free Guide Now</button>
         </div>
     </section>
 
-    <!-- JavaScript -->
+    button {
+        width: 100%;
+    }
+}
+
+          <!-- JavaScript -->
     <script>
         // Fade-in animation
         document.addEventListener('DOMContentLoaded', function() {
@@ -361,8 +443,5 @@
             }
         });
     </script>
-</body>
-</html>
-
 </body>
 </html>
