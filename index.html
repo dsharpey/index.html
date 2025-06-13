@@ -324,8 +324,8 @@
 
   </div>
 
-        <!-- Hero Section -->
- <section class="hero">
+<!-- Hero Section -->
+<section class="hero">
     <div class="container">
         <h1 class="fade-in">The Psychology of Profit</h1>
         <p class="fade-in">Ever wonder why some businesses seem to hypnotize customers into buying while others struggle to make a single sale?</p>
@@ -336,22 +336,22 @@
     </div>
 </section>
 
-    <!-- What You'll Get Section -->
-    <section class="features">
-        <div class="container">
-            <div class="features-box fade-in">
-                <h2>What You'll Learn:</h2>
-                <ul class="features-list">
-                    <li>The two-step decision process happening in every customer's brain</li>
-                    <li>The difference between content that gets likes vs. content that gets leads</li>
-                    <li>A 5-step system to apply psychology to any business</li>
-                </ul>
-            </div>
+<!-- What You'll Get Section -->
+<section class="features">
+    <div class="container">
+        <div class="features-box fade-in">
+            <h2>What You'll Learn:</h2>
+            <ul class="features-list">
+                <li>The two-step decision process happening in every customer's brain</li>
+                <li>The difference between content that gets likes vs. content that gets leads</li>
+                <li>A 5-step system to apply psychology to any business</li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Perfect For Section -->
- <section class="target">
+<!-- Perfect For Section -->
+<section class="target">
     <div class="container">
         <h2 class="fade-in">Perfect For:</h2>
         <div class="features-box fade-in">
@@ -367,79 +367,41 @@
     </div>
 </section>
 
+<script>
     // Fade-in animation
-
     document.addEventListener('DOMContentLoaded', function() {
-
-      const fadeElements = document.querySelectorAll('.fade-in');
-
-       
-
-      const observer = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add('visible');
-
-          }
-
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
         });
 
-      });
-
-
-
-      fadeElements.forEach(element => {
-
-        observer.observe(element);
-
-      });
-
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
     });
-
-
 
     // Popup functionality
-
     function openPopup() {
-
-      document.querySelector('.popup-overlay').style.display = 'flex';
-
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
-
+        document.querySelector('.popup-overlay').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when popup is open
     }
 
-
-
     // Close popup when clicking the X or outside the popup
-
     document.querySelector('.close-popup').addEventListener('click', function() {
-
-      document.querySelector('.popup-overlay').style.display = 'none';
-
-      document.body.style.overflow = 'auto'; // Re-enable scrolling
-
+        document.querySelector('.popup-overlay').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
     });
-
-
 
     document.querySelector('.popup-overlay').addEventListener('click', function(e) {
-
-      if (e.target === this) {
-
-        this.style.display = 'none';
-
-        document.body.style.overflow = 'auto';
-
-      }
-
+        if (e.target === this) {
+            this.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
     });
-
-  </script>
-
-</body>
-
-   <script>
+</script>
      
