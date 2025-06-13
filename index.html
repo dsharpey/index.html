@@ -403,9 +403,11 @@
             <div style="text-align: center; margin: 30px 0;">
                 <button class="cta-button fade-in" onclick="openPopup()">GET THE FREE PSYCHOLOGY GUIDE</button>
             </div>
-        </div> <!-- Button now inside the features-box with center styling -->
+        </div>
     </div>
 </section>
+
+<script>
     // Fade-in animation
     document.addEventListener('DOMContentLoaded', function() {
         const fadeElements = document.querySelectorAll('.fade-in');
@@ -417,7 +419,6 @@
                 }
             });
         });
-
         fadeElements.forEach(element => {
             observer.observe(element);
         });
