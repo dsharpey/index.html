@@ -499,81 +499,32 @@
   text-decoration: none;
 }
 
-/* Responsive Design - Force Desktop Layout */
+/* Responsive Design - Minimal Changes */
 @media (max-width: 768px) {
-    /* Force desktop layout */
     .container {
         padding: 0 15px;
-        max-width: 1200px; /* Keep desktop width */
     }
     
-    /* Override clamp functions to maintain desktop sizes */
-    .hero h1 {
-        font-size: 48px !important; /* Force desktop size */
-    }
-    
-    .hero p {
-        font-size: 24px !important; /* Force desktop size */
-    }
-    
-    .features h2, .target h2, .system-section h2, .portfolio-section h2 {
-        font-size: 36px !important; /* Force desktop size */
-    }
-    
-    .features h3, .target h3, .system-section h3 {
-        font-size: 28px !important; /* Force desktop size */
-    }
-    
-    /* Force grid layouts to stay */
+    /* Keep desktop grid behavior */
     .framework-grid {
-        grid-template-columns: repeat(3, 1fr) !important; /* Force 3 columns */
-        gap: 25px;
-    }
-    
-    .portfolio-grid {
-        grid-template-columns: repeat(3, 1fr) !important; /* Force 3 columns */
-        gap: 30px;
-    }
-    
-    /* Keep desktop padding */
-    .hero, .features, .target, .system-section, .portfolio-section {
-        padding: 60px 0 !important;
-    }
-    
-    .features-box, .implementation-promise, .portfolio-cta {
-        padding: 40px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Even on very small screens, maintain desktop layout */
-    .container {
-        padding: 0 10px;
-        max-width: 1200px;
-    }
-    
-    /* Force smaller desktop sizes but keep proportions */
-    .hero h1 {
-        font-size: 36px !important;
-    }
-    
-    .hero p {
-        font-size: 20px !important;
-    }
-    
-    .features h2, .target h2, .system-section h2, .portfolio-section h2 {
-        font-size: 28px !important;
-    }
-    
-    /* Keep grids but allow 2 columns minimum */
-    .framework-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
         gap: 20px;
     }
     
     .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
         gap: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Allow horizontal scrolling if needed to maintain layout */
+    .framework-grid, .portfolio-grid {
+        overflow-x: auto;
     }
 }
     </style>
